@@ -6,10 +6,10 @@
 % We use the memoir class for maximal flexibility of layout, but any
 % class will do
 
-\documentclass[12pt, twoside, openright]{memoir}
+\documentclass[12pt, a5paper, twoside, openright]{memoir}
 
 
-\usepackage[scaled=0.95]{helvet}
+
 \linespread{1.05}
 \usepackage{palatino}
 
@@ -22,14 +22,13 @@
 \setlxvchars
 
 % set the size of the type block to calculated width in golden ratio
-
 \settypeblocksize{*}{\lxvchars}{1.618}
 
-% set spine and and edge maring in golden ratio
 
+% set spine and and edge maring in golden ratio
 \setlrmargins{*}{*}{1.618}
-\setulmargins{60pt}{*}{*}
-\setheaderspaces{*}{*}{1.618}
+\setulmargins{43pt}{*}{*}
+\setheaderspaces{*}{15pt}{1.618}
 
 \checkandfixthelayout
 
@@ -60,6 +59,9 @@ Time Machine\usebox\adjust
 
 \frontmatter
 \pagestyle{simple}
+\copypagestyle{chapter}{simple}
+\makeoddfoot{chapter}{}{}{}
+\makeevenfoot{chapter}{}{}{}
 
 \tableofcontents*
 
@@ -71,5 +73,9 @@ I would like to thank my supervisor Andrew Benjamin for his support. This thesis
 
 \input{introduction.tex}
 \input{chapter1.tex}
-
+\input{chapter2.tex}
+\input{chapter3.tex}
+\input{chapter4.tex}
+\input{conclusion.tex}
+\backmatter
 \end{document}
