@@ -1,0 +1,81 @@
+% phil379.tex
+%
+% driver file phil379.tex to produce text on letter-size paper
+% with standard layout and margins
+
+% We use the memoir class for maximal flexibility of layout, but any
+% class will do
+
+\documentclass[12pt, twoside, openright]{memoir}
+
+
+\usepackage[scaled=0.95]{helvet}
+\linespread{1.05}
+\usepackage{palatino}
+
+% set stock & paper size to Lulu's ``Royal''
+\setstocksize{23.389cm}{15.593cm}
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\settrims{0pt}{0pt}
+
+% let's calculate the line length for 65 characters in \normalfont
+\setlxvchars
+
+% set the size of the type block to calculated width in golden ratio
+
+\settypeblocksize{*}{\lxvchars}{1.618}
+
+% set spine and and edge maring in golden ratio
+
+\setlrmargins{*}{*}{1.618}
+\setulmargins{60pt}{*}{*}
+\setheaderspaces{*}{*}{1.618}
+
+\checkandfixthelayout
+
+
+
+\begin{document}
+
+% First we make a titlepage
+\newbox\adjust
+
+\begin{titlingpage}
+\begin{raggedleft}
+  \fontsize{48pt}{7em}\selectfont\bfseries\sffamily
+  \setbox\adjust\hbox{\phantom{,}}
+Capitalism's\\
+Transcendental\\
+Time Machine\usebox\adjust
+\vskip 4ex
+\normalfont\Huge\textbf{A thesis by \usebox\adjust\\ Anna Greenspan \usebox\adjust}\
+\vskip 4ex
+\normalfont\small\textbf{September 2000 \usebox\adjust\\ University of Warwick \usebox\adjust}\
+
+\end{raggedleft}
+
+\vfill
+
+\end{titlingpage}
+
+\frontmatter
+\pagestyle{ruled}
+
+\tableofcontents*
+
+\mainmatter
+
+% now typeset all the problems as an appendix. If you want problems at
+% the end of each chapter, delete this part and put
+% \problemsperchapter in the preamble
+
+\backmatter
+
+\chapter*{Acknowledgments}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+I would like to thank my supervisor Andrew Benjamin for his support. This thesis has been written with the help of Louis Greenspan, Michelle Murphy and the Ccru. It is dedicated to my family.
+
+\input{introduction.tex}
+\input{chapter1.tex}
+
+\end{document}
