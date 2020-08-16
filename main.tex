@@ -1,20 +1,15 @@
-% phil379.tex
-%
-% driver file phil379.tex to produce text on letter-size paper
-% with standard layout and margins
-
-% We use the memoir class for maximal flexibility of layout, but any
-% class will do
-
-\documentclass[12pt, a5paper, twoside, openright]{memoir}
-
-
+\documentclass[11pt, statementpaper, twoside, openright]{memoir}
+\usepackage[hidelinks, breaklinks=true]{hyperref}
+\usepackage{xcolor}
+\usepackage{palatino}
+\usepackage{tabularx,booktabs,ragged2e}
 
 \linespread{1.05}
-\usepackage{palatino}
+
 
 % set stock & paper size to Lulu's ``Royal''
-\setstocksize{23.389cm}{15.593cm}
+\setstocksize{8.5in}{5.5in}
+
 \settrimmedsize{\stockheight}{\stockwidth}{*}
 \settrims{0pt}{0pt}
 
@@ -22,20 +17,17 @@
 \setlxvchars
 
 % set the size of the type block to calculated width in golden ratio
-\settypeblocksize{*}{\lxvchars}{1.618}
+\settypeblocksize{*}{\lxvchars}{1.418}
 
 
 % set spine and and edge maring in golden ratio
 \setlrmargins{*}{*}{1.618}
-\setulmargins{43pt}{*}{*}
-\setheaderspaces{*}{15pt}{1.618}
+\setulmargins{80pt}{*}{*}
+\setheaderspaces{*}{25pt}{1.618}
 
 \checkandfixthelayout
 
-
-
 \begin{document}
-
 % First we make a titlepage
 \newbox\adjust
 
@@ -47,13 +39,40 @@ Capitalism's\\
 Transcendental\\
 Time Machine\usebox\adjust
 \vskip 4ex
-\normalfont\Huge\textbf{A thesis by \usebox\adjust\\ Anna Greenspan \usebox\adjust}\
+\normalfont\Huge\textbf{Anna Greenspan\usebox\adjust}\
 \vskip 4ex
 \normalfont\small\textbf{September 2000 \usebox\adjust\\ University of Warwick \usebox\adjust}\
 
+\vskip 4ex
 \end{raggedleft}
-
 \vfill
+\clearpage
+\nopagecolor
+
+\begin{vplace}[0.7]
+\textbf{alexandra chace}.
+
+edited. designed. printed.
+
+atlanta. august 2020.
+
+\vskip 4ex
+originally submitted as a thesis to the \textit{University of Warwick}.
+
+author: Anna Greenspan.
+
+url: \href{http://wrap.warwick.ac.uk/4520/}{http://wrap.warwick.ac.uk/4520/}
+
+\vskip 4ex
+no copyright.
+\vskip 4ex
+unauthorized reproduction.
+\vskip 4ex
+not for profit.
+\vskip 4ex
+\href{mailto:achacega@gmail.com}{\textbf{ac}: achacega@gmail.com}.
+
+\end{vplace}
 
 \end{titlingpage}
 
@@ -78,4 +97,5 @@ I would like to thank my supervisor Andrew Benjamin for his support. This thesis
 \input{chapter4.tex}
 \input{conclusion.tex}
 \backmatter
+\input{appendix.tex}
 \end{document}
