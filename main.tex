@@ -3,27 +3,32 @@
 \usepackage{xcolor}
 \usepackage{palatino}
 \usepackage{tabularx,booktabs,ragged2e}
+\usepackage{xcolor}
 
+\definecolor{agnavy}{RGB}{155, 155, 209}
+
+\sloppy 
 \linespread{1.05}
 
-
-% set stock & paper size to Lulu's ``Royal''
-\setstocksize{8.5in}{5.5in}
-
+% set stock & paper size to Lulu's ``Pocket Book''
+\setstocksize{6.875in}{4.25in}
 \settrimmedsize{\stockheight}{\stockwidth}{*}
 \settrims{0pt}{0pt}
 
 % let's calculate the line length for 65 characters in \normalfont
 \setlxvchars
-
 % set the size of the type block to calculated width in golden ratio
-\settypeblocksize{*}{\lxvchars}{1.418}
-
+\settypeblocksize{*}{0.7\lxvchars}{1.418}
 
 % set spine and and edge maring in golden ratio
 \setlrmargins{*}{*}{1.618}
-\setulmargins{80pt}{*}{*}
-\setheaderspaces{*}{25pt}{1.618}
+\setulmarginsandblock{60pt}{*}{*}
+\setheaderspaces{*}{15pt}{1.618}
+
+\pagestyle{simple}
+\copypagestyle{chapter}{simple}
+\makeoddfoot{chapter}{}{}{}
+\makeevenfoot{chapter}{}{}{}
 
 \checkandfixthelayout
 
@@ -32,60 +37,58 @@
 \newbox\adjust
 
 \begin{titlingpage}
-\begin{raggedleft}
-  \fontsize{48pt}{7em}\selectfont\bfseries\sffamily
-  \setbox\adjust\hbox{\phantom{,}}
-Capitalism's\\
-Transcendental\\
-Time Machine\usebox\adjust
-\vskip 4ex
-\normalfont\Huge\textbf{Anna Greenspan\usebox\adjust}\
-\vskip 4ex
-\normalfont\small\textbf{September 2000 \usebox\adjust\\ University of Warwick \usebox\adjust}\
+    \pagecolor{agnavy}
+    \begin{raggedleft}
+      \fontsize{32pt}{5em}\selectfont\bfseries\sffamily
+      \setbox\adjust\hbox{\phantom{,}}
+    Capitalism's\\
+    Transcendental\\
+    Time Machine\usebox\adjust
+    \vskip 4ex
+    \normalfont\LARGE\textbf{Anna Greenspan\usebox\adjust}\
+    \vskip 4ex
+    \normalfont\normalsize\textbf{September 2000 \usebox\adjust\\ University of Warwick \usebox\adjust}\
+    
+    \vskip 4ex
+    \end{raggedleft}
+    \vfill
+    \clearpage
+    \nopagecolor
 
-\vskip 4ex
-\end{raggedleft}
-\vfill
-\clearpage
-\nopagecolor
-
-\begin{vplace}[0.7]
-\textbf{alexandra chace}.
-
-edited. designed. printed.
-
-atlanta. august 2020.
-
-\vskip 4ex
-originally submitted as a thesis to the \textit{University of Warwick}.
-
-author: Anna Greenspan.
-
-url: \href{http://wrap.warwick.ac.uk/4520/}{http://wrap.warwick.ac.uk/4520/}
-
-\vskip 4ex
-no copyright.
-\vskip 4ex
-unauthorized reproduction.
-\vskip 4ex
-not for profit.
-\vskip 4ex
-\href{mailto:achacega@gmail.com}{\textbf{ac}: achacega@gmail.com}.
-
-\end{vplace}
+    \begin{vplace}[0.7]
+        \begin{flushleft}
+            \textbf{alexandra chace}.
+            
+            edited. designed. printed.
+            
+            atlanta. august 2020.
+            
+            \vskip 4ex
+            thesis submitted to the \textit{University of Warwick}.
+            
+            author: Anna Greenspan.
+            
+            url: \href{http://wrap.warwick.ac.uk/4520/}{http://wrap.warwick.ac.uk/4520/}
+            
+            \vskip 4ex
+            no copyright.
+            \vskip 4ex
+            unauthorized reproduction.
+            \vskip 4ex
+            not for profit.
+            \vskip 4ex
+            \href{mailto:achacega@gmail.com}{\textbf{ac}: achacega@gmail.com}.
+            
+            \href{mailto:annagreenspan@gmail.com}{\textbf{ag}: annagreenspan@gmail.com}.
+        
+        \end{flushleft}
+    \end{vplace}
 
 \end{titlingpage}
 
 \frontmatter
-\pagestyle{simple}
-\copypagestyle{chapter}{simple}
-\makeoddfoot{chapter}{}{}{}
-\makeevenfoot{chapter}{}{}{}
-
 \tableofcontents*
-
 \mainmatter
-
 \chapter*{Acknowledgments}
 \addcontentsline{toc}{chapter}{Acknowledgements}
 I would like to thank my supervisor Andrew Benjamin for his support. This thesis has been written with the help of Louis Greenspan, Michelle Murphy and the Ccru. It is dedicated to my family.
